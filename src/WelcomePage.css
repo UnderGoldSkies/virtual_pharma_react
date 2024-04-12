@@ -1,0 +1,99 @@
+.homepage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.WelcomeBoxContainer {
+  position: absolute;
+  top: 350px;
+  right: 1000px;
+  z-index: 10; /* Ensure it's above the video background */
+}
+
+.WelcomeBox {
+  position: absolute;
+  top: 125px;
+  right: -104px; /* Adjust if needed to ensure visibility within the layout */
+  color: #fff;
+  background-color: transparent;
+  padding: 0;
+  width: 400px; /* Increase width to make the 'box' wider */
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0px;
+  text-align: center;
+  font-size: 24px; /* Adjust font size if necessary for fitting text within the new width */
+  font-weight: bold;
+  overflow: visible;
+  line-height: 28px; /* Adjust line height to make the text block 'shorter' */
+}
+
+
+.homepage .welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  margin-top: 0px;
+}
+
+@keyframes pulseButtonAnimation {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.welcome-section .fancy-button {
+  padding: 20px 30px;
+  margin-top: 306px;
+  margin-left: -6px;
+  background: linear-gradient(145deg, #00B4E6, #008DBC); /* Gradient for 3D effect */
+  color: white;
+  border: 2px solid #007B9E; /* Slightly darker border for depth */
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), /* Outer shadow for depth */
+               inset 2px 2px 5px rgba(255, 255, 255, 0.2), /* Inner shadow for inset effect */
+               inset -2px -2px 5px rgba(0, 0, 0, 0.2); /* Adding dimensionality */
+  animation: pulseButtonAnimation 3s infinite ease-in-out;
+  transition: color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  font-size: 20px;
+}
+
+.welcome-section .fancy-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: left 0.5s ease;
+}
+
+.welcome-section .fancy-button:hover, .welcome-section .fancy-button:focus {
+  background: linear-gradient(145deg, #00D0EE, #0094D2); /* Lighter gradient on hover for effect */
+  color: #fff;
+  border-color: #005A7C; /* Darker border on hover for contrast */
+  box-shadow: 0 0 20px rgba(0, 122, 204, 0.6), /* Enhanced outer shadow for hover */
+               inset 1px 1px 2px rgba(255, 255, 255, 0.3), /* Adjust inner shadow for hover */
+               inset -1px -1px 2px rgba(0, 0, 0, 0.3); /* Adjust for hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.welcome-section .fancy-button:hover::before, .welcome-section .fancy-button:focus::before {
+  left: 100%;
+}

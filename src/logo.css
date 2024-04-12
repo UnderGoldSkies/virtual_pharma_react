@@ -1,0 +1,12 @@
+.logo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20; /* Ensures the logo stays above other content */
+}
+
+.logo-container img {
+  height: 50px; /* Adjust based on your logo's size */
+  width: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensures the image does not exceed the container's width */
+}

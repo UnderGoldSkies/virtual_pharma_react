@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://cloudconvert.com/
+HostUrl=https://eu-central.storage.cloudconvert.com/tasks/5e4ea3d7-e4f0-4e14-a57d-2a90daca1147/AdobeStock_754719657.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20240412%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20240412T062208Z&X-Amz-Expires=86400&X-Amz-Signature=b8161b94da3f7de3c7271861a8f528810753b639040546e474d51db332fceade&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22AdobeStock_754719657.mp4%22&response-content-type=video%2Fmp4&x-id=GetObject

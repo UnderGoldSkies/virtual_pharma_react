@@ -4,6 +4,7 @@ import WelcomePage from './WelcomePage'; // Adjust with your actual component pa
 import DisclaimerPage from './DisclaimerPage';
 import QueryPage from './QueryPage';
 import CounsellingPage from './CounsellingPage';
+import ThankYouPage from './ThankYouPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/disclaimer" element={<DisclaimerPage />} />
         <Route path="/query" element={<QueryPage />} />
         <Route path="/counselling" element={<CounsellingPage />} />
+        <Route path="/thankyou" element={<ThankYouPage />} />
       </Routes>
     </Router>
   );
