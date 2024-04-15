@@ -3,24 +3,83 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh; /* Ensure it has a visible height */
   overflow: hidden;
-  z-index: -1; /* Keeps the image section in the background */
+  z-index: -1; /* Keeps it behind other content */
 }
 
-.content-container {  /* Ensure the parent has relative positioning */
+.content-container {
   position: relative;
-  height: 100%;  /* Adjust height as necessary */
+  max-width: 500px; /* or your desired max width */
+  margin: auto; /* centers the container */
+  padding: 20px;
+  background-color: transparent; /* Make this transparent or remove */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Example shadow for better visibility */
+  z-index: 1; /* Make sure it's above the video but not obscuring it */
+  left: 500px;
+  top: 30px;
 }
+
 
 .medication-container {
-  position: absolute;
-  right: 20px;  /* Distance from the right side of the parent container */
-  top: 20px;  /* Distance from the top of the parent container */
-  border: 2px solid #ccc;
   padding: 20px;
-  background-color: #f9f9f9;
+  background: linear-gradient(to right, #ffffff, #f1f1f1); /* Subtle gradient from white to light grey */
+  border-radius: 12px; /* Soft rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1), 0 6px 20px rgba(0,0,0,0.19); /* Multi-layer shadows for depth */
+  border: 1px solid #dddddd; /* Fine border for defined edges */
+  transition: all 0.3s ease-in-out; /* Smooth transition for interactions */
+}
+
+.medication-container:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15), 0 12px 24px rgba(0,0,0,0.25); /* Enhanced shadow for a 3D hover effect */
+  transform: translateY(-3px); /* Slight raise effect on hover */
+}
+
+/* Styling for paragraph elements within the medication container */
+.medication-container p {
+  font-size: 16px; /* Slightly larger font size for readability */
+  color: #333; /* Darker text for contrast against the light background */
+  line-height: 1.6; /* More space between lines for readability */
+  padding: 5px 0; /* Padding for each sentence for better separation */
+}
+
+
+.navigation-container {
+  display: flex;
+  justify-content: space-between; /* Keeps buttons on the left and page index on the right */
+  align-items: center;
+  margin-top: 20px;
+}
+
+.navigation-buttons {
+  /* Additional container for just the buttons to manage spacing between them specifically */
+  display: flex;
+  gap: 0px; /* Adjusts the gap between the Previous and Next buttons */
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px 20px; /* Larger padding for a more clickable area */
+  background-color: #007bff; /* Bright blue background */
+  color: white;
+  border: none;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out, background-color 0.2s; /* Smooth transitions for interactive effects */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover for feedback */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+button:disabled {
+  background-color: #ccc;
+  color: #666; /* Dim the text color too for better disabled state indication */
+  cursor: not-allowed; /* Change cursor to indicate disabled state */
+  transform: none; /* No transform on disabled buttons */
+}
+
+button:not(:disabled):active {
+  transform: translateY(1px); /* Subtle push effect on click */
 }
