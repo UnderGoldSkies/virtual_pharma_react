@@ -6,7 +6,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 function CounsellingPage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const videoRef = useRef(null);
 
   // Function to navigate to the thank you page
   const navigateToThankYouPage = () => {
@@ -53,10 +52,6 @@ function CounsellingPage() {
         <img src={`${process.env.PUBLIC_URL}/NUHS_Logo.png`} alt="NUH Virtual Pharmacist Logo" />
       </div>
       <div className="section image-section">
-        <video ref={videoRef} autoPlay loop muted style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', top: '0', left: '0', zIndex: -1 }}>
-          <source src={`${process.env.PUBLIC_URL}/Counselling_Background.mp4`} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
       </div>
       <div className="content-container">
         <h1>Counselling Information</h1>

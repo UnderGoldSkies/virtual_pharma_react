@@ -1,150 +1,167 @@
-/* Global settings */
-*, *:before, *:after {
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+/* Ensure the html and body take up the full height and width */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scroll */
 }
 
-/* Main screen and background styling */
+/* Ensure the root container also takes up all available height */
 .query-screen {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Ensures at least the height of the viewport */
+  width: 100%;
   position: relative;
+  overflow: hidden; /* Avoids any overflow causing scroll bars */
 }
 
-.image-section {
+/* Section and Background Video Adjustments */
+.section, .image-section {
+  width: 100%;
+  height: 100%;
+}
+
+.image-section video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  z-index: -1; /* Keeps the image section in the background */
+  object-fit: cover; /* Ensures the video covers the entire area */
+  z-index: -1;
 }
 
-.query-section {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Adjust gap for consistency */
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  max-width: 400px;
+/* Full-width sections */
+.section {
+  box-sizing: border-box;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0); /* Keep as per your preference */
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0); /* Adjust alpha for visibility if needed */
-  z-index: 2;
-  position: relative;
-  transform: translate(450px, -100px); /* Position adjustment as per your request */
-}
-
-/* Button styling */
-.query-section button {
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.buttons-container {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
-/* Button hover and focus effects */
-.query-section button:hover, .query-section button:focus {
-  transform: scale(1.05);
-}
-
-/* Specific button colors */
-.query-section .yes-button {
-  background-color: #4CAF50;
-}
-
-.query-section .yes-button:hover, .query-section .yes-button:focus {
-  background-color: #45a049;
-}
-
-.query-section .no-button {
-  background-color: #f44336;
-}
-
-.query-section .no-button:hover, .query-section .no-button:focus {
-  background-color: #d32f2f;
-}
-
-/* Welcome message and error message styling */
-.query-section p,
-.error-message {
-  padding: 12px 24px;
-  font-size: 16px; /* Smaller font size for error message for differentiation */
-  font-weight: 600;
-  color: #333; /* Error message color is red for visibility */
-  text-align: center;
-  width: 100%;
-  border-radius: 30px;
-  background-color: rgba(255, 255, 255, 0.8);
-  margin: 0 auto;
-}
-
-.error-message {
-  color: #f44336;
-  font-size: 14px; /* Adjusted for specificity */
-}
-
-.id-input {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  gap: 20px; /* Ensure consistent gap */
-}
-
-.query-section .id-input input {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 30px;
-  border: 2px solid #ccc;
-  width: 100%;
   text-align: center;
-  margin: 0 auto;
 }
 
+/* Styling the container of the input field */
+.id-input {
+  background-color: #f9f9f9; /* Light grey background for the container */
+  border: 1px solid #ddd; /* Subtle border for the container */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding around the content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  margin: 20px 0; /* Space above and below the container */
+  text-align: center; /* Center the text and input */
+}
+
+/* Styling the paragraph above the input */
+.id-input p {
+  color: #333; /* Dark grey color for text */
+  font-size: 16px; /* Adequate font size for readability */
+  margin-top: 15px;
+  margin-bottom: 15px; /* Space between the text and the input field */
+}
+
+/* Styling the input field itself */
+.id-input input {
+  width: 80%; /* Takes up 80% of its parent's width */
+  padding: 10px 15px; /* Padding inside the input for comfortable typing */
+  font-size: 14px; /* Font size for the input text */
+  border: 2px solid #ccc; /* Subtle border for the input */
+  border-radius: 5px; /* Rounded corners for the input */
+  display: block; /* Makes the input a block element to take width properly */
+  margin: 0 auto; /* Centers the input within the container */
+  outline: none; /* Removes the default focus outline */
+}
+
+/* Enhancing the input field focus state */
+.id-input input:focus {
+  border-color: #0056b3; /* Changes border color on focus for better visibility */
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.25); /* Adds a glow effect on focus */
+}
+
+.id-input input[type="text"] {
+  text-align: center;
+}
+
+
+/* General setup for the submit button */
 .submit-button {
-  padding: 12px 24px; /* Provides ample padding for a larger click area */
-  font-size: 16px; /* Ensures the text is easily readable */
-  font-weight: bold; /* Makes the text stand out more */
-  color: #ffffff; /* Sets text color to white for high contrast */
-  background-color: #007BFF; /* Sets a vibrant, eye-catching background color */
-  border: none; /* Removes the default border */
-  border-radius: 5px; /* Adds rounded corners for a modern look */
-  cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
-  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for background color and scaling */
-  outline: none; /* Removes the outline to clean up the appearance, especially after clicking */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Adds a subtle shadow for depth */
+  padding: 12px 24px;
+  font-size: 16px; /* Increase font size if 'above average px' refers to font size */
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin-top: 15px;
 }
 
 .submit-button:hover {
-  background-color: #0056b3; /* Darkens the button on hover for feedback */
-  transform: scale(1.05); /* Slightly enlarges the button */
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slightly increases size on hover */
 }
 
 .submit-button:active {
-  background-color: #004085; /* Makes the button even darker when clicked */
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3); /* Adjusts the shadow to appear inset, simulating a pressed effect */
+  background-color: #004085;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3); /* Gives a pressed-in effect */
 }
 
-.loading-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000; /* Ensure it appears above other content */
+/* Container to handle conditional rendering and positioning */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px; /* Adds padding to compensate for the negative margin of the button */
+}
+
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+  .id-input {
+    padding: 15px;
+  }
+  .id-input input {
+    width: 90%; /* Increases width in smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .id-input input, .buttons-container {
+    width: 100%; /* Adjustments for smaller screens */
+  }
+  .buttons-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Adds space around the content */
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Light white background */
+  border-radius: 10px; /* Optional: Adds rounded corners for aesthetics */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds a slight shadow for depth */
+}
+
+.loading-content img {
+  width: 50px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 20px; /* Space between the icon and the text */
+}
+
+.loading-content p {
+  font-size: 18px; /* Adjust font size as needed */
+  color: #333; /* Dark grey color for text */
 }

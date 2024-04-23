@@ -7,12 +7,12 @@ function WelcomePage() {
   const navigate = useNavigate();
   const videoRef = useRef(null);
 
-  const navigateToDisclaimer = () => {
-    navigate('/disclaimer');
+  const navigateToQuery = () => {
+    navigate('/query');
   };
 
   return (
-    <div className="homepage">
+    <div className="homepage" onClick={navigateToQuery} style={{ height: '100vh', cursor: 'pointer' }}>
       <div className="logo-container">
         <img src={`${process.env.PUBLIC_URL}/NUHS_Logo.png`} alt="NUH Virtual Pharmacist Logo" />
       </div>
@@ -25,10 +25,9 @@ function WelcomePage() {
       <div className="WelcomeBoxContainer">
         <div className="WelcomeBox">
           <p>Welcome to NUH Virtual Pharmacist</p>
+          <p> </p>
+          <p>CLICK ANYWHERE TO START</p>
         </div>
-      </div>
-      <div className="welcome-section">
-        <button onClick={navigateToDisclaimer} className="fancy-button">Click Here to Start Drug Counselling</button>
       </div>
     </div>
   );

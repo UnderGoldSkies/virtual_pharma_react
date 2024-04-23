@@ -40,10 +40,10 @@ function DisclaimerPage() {
       <p><strong>Virtual Pharmacy Disclaimer</strong></p>
       <p style={{ textAlign: 'left' }}>Before using the Virtual Pharmacy, it is essential that you read, understand, and agree to the following terms:</p>
       <p style={{ textAlign: 'left' }}>
-      <strong>What This Tool Does:</strong> This tool gives you advice about your medicines. It's here to help expedite the process and shorten waiting time.
+      <strong>What This Tool Does:</strong> This tool gives you advice about your medicines. It's here to help shorten your waiting time.
       </p>
       <p style={{ textAlign: 'left' }}>
-      <strong>What to Do if Something Seems Wrong:</strong> If the information you get from this Virtual Pharmacy doesn't match what your medicine bottle says, or if you're worried about the advice it gives, please tell someone at a pharmacy or ask a doctor or pharmacist.
+      <strong>What to Do if Something Seems Wrong:</strong> If the information you get from this Virtual Pharmacy doesn't match what your medication says, or if you're worried about the advice it gives, please contact us at the counter.
       </p>
       <button onClick={navigateToQuery} className="disclaimer-accept-button">Acknowledge</button>
         <button onClick={handleDecline} className="disclaimer-decline-button">Decline</button>
