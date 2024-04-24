@@ -14,16 +14,14 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   background-color: white;      /* White background for the box */
   width: 310px;                 /* Fixed width */
-  text-align: center;           /* Center text alignment */
   position: absolute;           /* Absolute positioning */
-  top: 40.8%;                      /* Center vertically */
-  left: 587px;
-  transform: translateY(-50%);  /* Offset by half its height */
-  font-size: 20px;            /* Larger font size */
-  font-weight: bold;          /* Bold font weight */
-  color: #2a2a2a;             /* Darker color for better readability */
-  text-align: center;         /* Center-align the text */
-  margin: 20px 0;             /* Add some vertical spacing */
-  letter-spacing: 0.5px;      /* Slight letter spacing to enhance readability */
+  top: 41%;                     /* Center vertically in the middle */
+  left: 49.5%;                    /* Center horizontally in the middle */
+  transform: translate(-50%, -50%); /* Offset by half its width and height to truly center it */
+  font-size: 17px;              /* Larger font size */
+  font-weight: bold;            /* Bold font weight */
+  color: #2a2a2a;               /* Darker color for better readability */
+  text-align: center;           /* Center-align the text */
+  letter-spacing: 0.5px;        /* Slight letter spacing to enhance readability */
   text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Subtle text shadow for depth */
 }
